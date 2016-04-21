@@ -1,7 +1,9 @@
 package com.citi.example;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.citi.rxbus.example.R;
 
 public class MainActivity extends AppCompatActivity {
 
