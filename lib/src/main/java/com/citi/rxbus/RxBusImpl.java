@@ -41,6 +41,7 @@ public final class RxBusImpl implements RxBus {
             mStickyBusInput.groupBy(Object::getClass)
                     .map(groupedByClassObservable -> {
                         final ConnectableObservable<Object> replay = groupedByClassObservable.replay(1);
+                        replay.subscribe(); // see: github.com/ReactiveX/RxJava/issues/3219
                         replay.connect();
                         return Pair.create((Class) groupedByClassObservable.getKey(),
                                            (Observable<Object>) replay);
